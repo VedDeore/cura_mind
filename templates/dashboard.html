@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CURA-MIND</title>
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='assets/img/cura_mind.png') }}"
+      type="image/png"
+    />
+    <link
+      href="{{ url_for('static', filename='css/styles.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container1">
+      <nav>
+        <ul>
+          <li>
+            <a href="/user-profile" class="logo">
+              <img
+                src="{{ url_for('static', filename='assets/img/Dashuser.png') }}"
+              />
+              <span class="nav-item">My Profile</span>
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              <i class="fas fa-tachometer-alt"></i>
+              <span class="nav-item">Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="/logout">
+              <i class="fas fa-sign-out-alt fa-flip-horizontal"></i>
+              <span class="nav-item">Logout</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <section class="main" method="POST">
+        <h1 style="text-align: center">CURA-MIND</h1>
+        <div class="users">
+          <div class="card">
+            <img
+              src="{{ url_for('static', filename='assets/img/depressed.jpg') }}"
+            />
+            <h4>Mental Health Assessment</h4>
+            <p>Mental Health Assistance</p>
+            <h5>
+              Start your free online mental health self assessment<br />Now!
+            </h5>
+            <button onclick="location.href='/mental-health'">
+              Take Assessment
+            </button>
+          </div>
+          <div class="card">
+            <img
+              src="{{ url_for('static', filename='assets/img/happy.jpg') }}"
+            />
+            <h4>Well-being Assessment</h4>
+            <p>How happy you are</p>
+            <h5>Start your free online well-being self assessment<br />Now!</h5>
+            <button onclick="location.href='/happy'">Take Assessment</button>
+          </div>
+        </div>
+        <br />
+        <div class="attendance-list">
+          <h2 style="color: Red">Disclaimer:</h2>
+          <h3 align="justify">
+            Online screening is one of the quickest and easiest ways to
+            determine whether you are experiencing symptoms of a mental health
+            condition such as stress, depression, & anxiety. If you need to
+            consult a medical professional, you can reach out to psychiatrist or
+            mental health expert for further assistance.<br />
+            *Please note that these are not diagnostic tests, but nevertheless a
+            good start for self-help!
+          </h3>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

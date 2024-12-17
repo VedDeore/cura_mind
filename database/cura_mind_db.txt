@@ -1,0 +1,30 @@
+CREATE DATABASE db_name;
+
+use db_name;
+
+CREATE TABLE `tbl_user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `firstname` varchar(100) NOT NULL,
+  `lastname` varchar(100) NOT NULL,
+  `age` int(3) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  PRIMARY KEY(`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci AUTO_INCREMENT = 1;
+
+INSERT INTO `tbl_user` (`id`, `firstname`, `lastname`, `age`, `username`, `password`) VALUES
+(1, 'Test', 'User', 24, 'testuser@gmail.com', 'Test@123');
+
+
+CREATE TABLE `tbl_admin` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `adminfirst` varchar(100) NOT NULL,
+  `adminlast` varchar(100) NOT NULL,
+  `adminage` int(3) NOT NULL,
+  `adminusername` varchar(100) NOT NULL,
+  `adminpassword` varchar(100) NOT NULL,
+  PRIMARY KEY(`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci AUTO_INCREMENT = 1;
+
+INSERT INTO `tbl_admin` (`id`, `adminfirst`, `adminlast`, `adminage`, `adminusername`, `adminpassword`) VALUES
+(1, 'Admin', 'User', 30, 'admin@gmail.com', 'Admin@123');

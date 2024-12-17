@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <title>Well-being Assessment</title>
+    <link rel="icon" href="{{ url_for('static', filename='assets/img/cura_mind.png') }}" type="image/png">
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  </head>
+
+  <body>
+    <div class="container1">
+      <nav>
+        <ul>
+          <li>
+            <a href="/user-profile" class="logo">
+              <img src="{{ url_for('static', filename='assets/img/Dashuser.png') }}">
+              <span class="nav-item">My Profile</span>
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              <i class="fas fa-tachometer-alt"></i>
+              <span class="nav-item">Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="/logout">
+              <i class="fas fa-sign-out-alt fa-flip-horizontal"></i>
+              <span class="nav-item">Logout</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <section class="main" method="POST">
+      <section class="attendance">
+        <div class="attendance-list">
+          <form action="/happy" class="form" method="POST">
+            <center>
+              <h2>Well-being Assessment</h2>
+            </center><br>
+            <h3> Below are eight statememts with which you may agree or disagree. Indicate your response to each statement
+              using the 1-7 scale below.</h3>
+            <h4>7 - Strongly agree</h4>
+            <h4>6 - Agree</h4>
+            <h4>5 - Slightly agree</h4>
+            <h4>4 - Mixed or rather agree or disagree</h4>
+            <h4>3 - Slightly disagree</h4>
+            <h4>2 - Disagree</h4>
+            <h4>1 - Strongly disagree</h4>
+
+            <div class="input-box">
+              <label>I lead a purposeful and meaningful life</label>
+              <input type="Number" name="h1" placeholder="1-7" min="1" max="7" required />
+            </div>
+
+            <div class="input-box">
+              <label>My social relationships are supportive and rewarding</label>
+              <input type="Number" name="h2" placeholder="1-7" min="1" max="7" required />
+            </div>
+
+            <div class="input-box">
+              <label>I am engaged and interested in my daily acitivities</label>
+              <input type="Number" name="h3" placeholder="1-7" min="1" max="7" required />
+            </div>
+            <div class="input-box">
+              <label>I actively contribute to the happiness and well-being of others</label>
+              <input type="Number" name="h4" placeholder="1-7" min="1" max="7" required />
+            </div>
+            <div class="input-box">
+              <label>I am competent and capable in the activities that are important to me</label>
+              <input type="Number" name="h5" placeholder="1-7" min="1" max="7" required />
+            </div>
+            <div class="input-box">
+              <label>I am a good person and live a good life</label>
+              <input type="Number" name="h6" placeholder="1-7" min="1" max="7" required />
+            </div>
+            <div class="input-box">
+              <label>I am optimistic about my future(hopeful)</label>
+              <input type="Number" name="h7" placeholder="1-7" min="1" max="7" required />
+            </div>
+            <div class="input-box">
+              <label>People respect me</label>
+              <input type="Number" name="h8" placeholder="1-7" min="1" max="7" required />
+            </div>
+            <button type="submit" formaction="#popup1">Submit</button>
+          </form>
+          <div id="popup1" class="overlay1">
+            <div class="popup">
+              <h3>{% autoescape off %}
+                {% if p4 %}
+                Your Happiness Score is : {{p4}}
+                {% endif %}
+                {% if pr5 %}
+                {{pr5}}
+                {% endif %}
+                {% endautoescape %}
+              </h3><br>
+              <div class="close" onclick="location.href='/happy'">&times;</div>
+              <h4>The possible range of scores is from 8 (lowest possible) to 56 (highest possible).
+                A high score represents a person with many psychological resources and strengths.</h4><br>
+              <center><img src="{{ url_for('static', filename='assets/img/stressmanagement.png') }}" width="170" height="160"></center>
+
+              <div class="content">
+                <center>
+                  <h3>Begin Your Journey to Holistic Wellness!</h3>
+                  <a class="button" href="{{ url_for('static', filename='assets/pdf/cura_mind_leaflet.pdf') }}" download>Download Well-being Guide</a>
+                  <a class="button" onclick="window.location.href='#';">Book Appointment</a>
+                </center>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </body>
+
+</html>

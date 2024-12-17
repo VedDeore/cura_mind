@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>Admin Profile</title>
+		<link rel="icon" href="{{ url_for('static', filename='assets/img/cura_mind.png') }}" type="image/png">
+		<link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+	</head>
+
+	<body>
+		<div class="container1">
+			<nav>
+				<ul>
+					<li>
+						<a href="/adminprofile" class="logo">
+							<img src="{{ url_for('static', filename='assets/img/Dashuser.png') }}">
+							<span class="nav-item">My Profile</span>
+						</a>
+					</li>
+					<li>
+						<a href="/admindashboard">
+							<i class="fas fa-tachometer-alt"></i>
+							<span class="nav-item">Dashboard</span>
+						</a>
+					</li>
+					<li>
+						<a href="/logout">
+							<i class="fas fa-sign-out-alt fa-flip-horizontal"></i>
+							<span class="nav-item">Logout</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+
+		<section class="main" method="POST">
+			<section class="attendance">
+				<div class="attendance-list">
+					<div class="card shadow-sm">
+						<div class="card-header bg-transparent border-0">
+							<h3 class="mb-0"><i class="fa fa-info-circle pr-1"></i>&nbsp General Information</h3>
+						</div>
+						<div class="card-body pt-0">
+							{% block content %}
+							<table class="table table-bordered">
+								<tr>
+									<th width="30%">First Name</th>
+									<td width="2%">:</td>
+									<td>{{ aprofile['adminfirst'] }}</td>
+								</tr>
+								<tr>
+									<th width="30%">Last Name</th>
+									<td width="2%">:</td>
+									<td>{{ aprofile['adminlast'] }}</td>
+								</tr>
+								<tr>
+									<th width="30%">Age</th>
+									<td width="2%">:</td>
+									<td>{{ aprofile['adminage'] }}</td>
+								</tr>
+								<tr>
+									<th width="30%">Email</th>
+									<td width="2%">:</td>
+									<td>{{ aprofile['adminusername'] }}</td>
+								</tr>
+								<tr>
+									<th width="30%">Password</th>
+									<td width="2%">:</td>
+									<td>{{ aprofile['adminpassword'] }}</td>
+								</tr>
+							</table>
+							{% endblock %}
+						</div>
+					</div>
+				</div>
+			</section>
+		</section>
+	</body>
+
+</html>

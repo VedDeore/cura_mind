@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+	<head>
+		<meta charset="UTF-8" />
+		<title>Admin Dashboard</title>
+		<link rel="icon" href="{{ url_for('static', filename='assets/img/cura_mind.png') }}" type="image/png">
+		<link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+	</head>
+
+	<body>
+		<div class="container1">
+			<nav>
+				<ul>
+					<li>
+						<a href="/adminprofile" class="logo">
+							<img src="{{ url_for('static', filename='assets/img/Dashuser.png') }}">
+							<span class="nav-item">My Profile</span>
+						</a>
+					</li>
+					<li>
+						<a href="/admindashboard">
+							<i class="fas fa-tachometer-alt"></i>
+							<span class="nav-item">Dashboard</span>
+						</a>
+					</li>
+					<li>
+						<a href="/logout">
+							<i class="fas fa-sign-out-alt fa-flip-horizontal"></i>
+							<span class="nav-item">Logout</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+
+		<section class="main" method="POST">
+			<section class="attendance">
+				<div class="attendance-list">
+					<div class="card shadow-sm">
+						<div class="card-header bg-transparent border-0">
+							<h3 class="mb-0"><i class="far fa-clone pr-1"></i>&nbsp Users Information </h3>
+						</div>
+						<div class="card-body pt-0"><br>
+							<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search by name...">
+							<table class="table table-bordered" id="myTable">
+								<tr>
+									<th class="text-center">Sr. No.</th>
+									<th class="text-center">First Name</th>
+									<th class="text-center">Last Name</th>
+									<th class="text-center">Age</th>
+									<th class="text-center">Email</th>
+								</tr>
+
+								{% for users in users %}
+								<tr style="text-align: center;">
+									<td>{{loop.index}}</td>
+									<td>{{ users['firstname'] }}</td>
+									<td>{{ users['lastname'] }}</td>
+									<td>{{ users['age'] }}</td>
+									<td>{{ users['username'] }}</td>
+								</tr>
+								{% endfor %}
+
+							</table>
+						</div>
+					</div>
+				</div>
+			</section>
+		</section>
+		</div>
+		<script>
+			function myFunction() {
+				var input, filter, table, tr, td, i, txtValue;
+				input = document.getElementById("myInput");
+				filter = input.value.toUpperCase();
+				table = document.getElementById("myTable");
+				tr = table.getElementsByTagName("tr");
+
+				for (i = 0; i < tr.length; i++) {
+					td1 = tr[i].getElementsByTagName("td")[1];
+					td2 = tr[i].getElementsByTagName("td")[2];
+					if (td1) {
+						txtValue1 = td1.textContent || td1.innerText;
+						if (txtValue1.toUpperCase().indexOf(filter) > -1) {
+							tr[i].style.display = "";
+						} else {
+							tr[i].style.display = "none";
+						}
+					}
+					if (td2) {
+						txtValue2 = td2.textContent || td2.innerText;
+						if (txtValue2.toUpperCase().indexOf(filter) > -1) {
+							tr[i].style.display = "";
+						}
+					}
+				}
+			}
+		</script>
+	</body>
+
+</html>

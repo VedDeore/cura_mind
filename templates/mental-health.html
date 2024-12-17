@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mental Health Assessment</title>
+    <link rel="icon" href="{{ url_for('static', filename='assets/img/cura_mind.png') }}" type="image/png">
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  </head>
+
+  <body>
+    <div class="container1">
+      <nav>
+        <ul>
+          <li>
+            <a href="/user-profile" class="logo">
+              <img src="{{ url_for('static', filename='assets/img/Dashuser.png') }}">
+              <span class="nav-item">My Profile</span>
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              <i class="fas fa-tachometer-alt"></i>
+              <span class="nav-item">Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="/logout">
+              <i class="fas fa-sign-out-alt fa-flip-horizontal"></i>
+              <span class="nav-item">Logout</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <section class="main" method="POST">
+      <section class="attendance">
+        <div class="attendance-list">
+          <form action="/mental-health" class="form" method="POST">
+            <center>
+              <h2>Mental Health Assessment</h2>
+            </center><br>
+            <h3> Over the last two weeks, how often have you been bothered by any of the following problems?</h3>
+            <h4>0 - Did not apply to me at all</h4>
+            <h4>1&nbsp - Applied to me to some degree, or several days</h4>
+            <h4>2 - Applied to me to a considerable degree or more than half the days</h4>
+            <h4>3 - Applied to me very much or nearly everyday</h4>
+            <div class="input-box">
+              <label>I could not seem to experience any positive feeling at all</label>
+              <input type="Number" name="d1" placeholder="0-3" min="0" max="3" required />
+            </div>
+
+            <div class="input-box">
+              <label>I found it difficult to work up the initiative to do things</label>
+              <input type="Number" name="d2" placeholder="0-3" min="0" max="3" required />
+            </div>
+
+            <div class="input-box">
+              <label>I felt that I had nothing to look forward</label>
+              <input type="Number" name="d3" placeholder="0-3" min="0" max="3" required />
+            </div>
+
+            <div class="input-box">
+              <label>I felt down hearted and blue (feeling sad and discouraged)</label>
+              <input type="Number" name="d4" placeholder="0-3" min="0" max="3" required />
+            </div>
+
+            <div class="input-box">
+              <label>I was unable to become enthusiastic about anything</label>
+              <input type="Number" name="d5" placeholder="0-3" min="0" max="3" required />
+            </div>
+
+            <div class="input-box">
+              <label>I felt I was not worth much as a person</label>
+              <input type="Number" name="d6" placeholder="0-3" min="0" max="3" required />
+            </div>
+
+            <div class="input-box">
+              <label>I felt that life was meaningless</label>
+              <input type="Number" name="d7" placeholder="0-3" min="0" max="3" required />
+            </div>
+
+            <div class="input-box">
+              <label>I was aware of dryness of my mouth</label>
+              <input type="Number" name="a1" placeholder="0-3" min="0" max="3" required />
+            </div>
+
+            <div class="input-box">
+              <label>I experienced breathing difficulty (e.g. excessively rapid breathing, breathlessness in the absence
+                of physical exertion)</label>
+              <input type="Number" name="a2" placeholder="0-3" min="0" max="3" required />
+            </div>
+
+            <div class="input-box">
+              <label>I experienced trembling (shaking, e.g. in the hands)</label>
+              <input type="Number" name="a3" placeholder="0-3" min="0" max="3" required />
+            </div>
+
+            <div class="input-box">
+              <label>I was worried about situations in which I might panic and make a fool of myself</label>
+              <input type="Number" name="a4" placeholder="0-3" min="0" max="3" required />
+            </div>
+
+            <div class="input-box">
+              <label>I felt I was close to panic</label>
+              <input type="Number" name="a5" placeholder="0-3" min="0" max="3" required />
+            </div>
+
+            <div class="input-box">
+              <label>I was aware of the action of my heart in the absence of physical exertion(e.g. sense of heart rate
+                increase, heart missing a beat)</label>
+              <input type="Number" name="a6" placeholder="0-3" min="0" max="3" required />
+            </div>
+
+            <div class="input-box">
+              <label>I felt scared without any good reason</label>
+              <input type="Number" name="a7" placeholder="0-3" min="0" max="3" required />
+            </div>
+
+            <div class="input-box">
+              <label>I found it hard to wind down (calm down)</label>
+              <input type="Number" name="s1" placeholder="0-3" min="0" max="3" required />
+            </div>
+
+            <div class="input-box">
+              <label>I tended to over react to situations</label>
+              <input type="Number" name="s2" placeholder="0-3" min="0" max="3" required />
+            </div>
+
+            <div class="input-box">
+              <label>I felt that I was using a lot of nervous energy (an excess of energy that you have when you are
+                worried)</label>
+              <input type="Number" name="s3" placeholder="0-3" min="0" max="3" required />
+            </div>
+
+            <div class="input-box">
+              <label>I found myself getting agitated (upset, disturbed)</label>
+              <input type="Number" name="s4" placeholder="0-3" min="0" max="3" required />
+            </div>
+            <div class="input-box">
+              <label>I found it difficult to relax</label>
+              <input type="Number" name="s5" placeholder="0-3" min="0" max="3" required />
+            </div>
+
+            <div class="input-box">
+              <label>I was intolerant of anything that kept me from getting on with what I was doing</label>
+              <input type="Number" name="s6" placeholder="0-3" min="0" max="3" required />
+            </div>
+
+            <div class="input-box">
+              <label>I felt that I was rather touchy(sensitive)</label>
+              <input type="Number" name="s7" placeholder="0-3" min="0" max="3" required />
+            </div><br>
+
+            <button type="submit" formaction="#popup1">Submit</button>
+          </form>
+          
+          <div id="popup1" class="overlay1">
+            <div class="popup">
+				<h3>
+				{% autoescape off %}
+				Your severity level<br>
+                {% if pr1 %}
+                Depression : {{pr1}}<br>
+                {% endif %}
+                {% if pr3 %}
+                Anxiety : {{pr3}}<br>
+                {% endif %}
+                {% if pr2 %}
+                Stress : {{pr2}}<br><br>
+                {% endif %}
+                {% if pr4 %}
+                <h3 id = "above-threshold">{{pr4}}</h3><br>
+                {% endif %}
+                {% endautoescape %}
+				</h3><br>
+              <b style='color:Red;'>*Please note that these are not diagnostic tests, but nevertheless a good start for self-help!</b><br><br>
+
+              <div class="close" onclick="location.href='/mental-health'">&times;</div>
+              <center><img src="{{ url_for('static', filename='assets/img/stressmanagement.png') }}" width="170" height="160">
+              </center>
+
+              <div class="content">
+                <center>
+                  <h3>Begin Your Journey to Holistic Wellness!</h3>
+                  <a class="button" href="{{ url_for('static', filename='assets/pdf/cura_mind_leaflet.pdf') }}" download>Download Well-Being Guide</a>
+                  <a class="button" onclick="window.location.href='#';">Book Appointment</a>
+                </center>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </body>
+
+</html>

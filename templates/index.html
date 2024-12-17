@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Login</title>
+		<link rel="icon" href="{{ url_for('static', filename='assets/img/cura_mind.png') }}" type="image/png">
+		<link href="{{ url_for('static', filename='css/login.css') }}" rel="stylesheet" />
+	</head>
+	<div id="container" class="container">
+		<div class="row">
+			<div class="col align-items-center flex-col sign-up">
+				<div class="form-wrapper align-items-center">
+					<div class="form sign-up">
+						<form action="/register" method="POST">
+							{% autoescape off %}
+							<div class="msg">{{ msg }}</div>
+							{% endautoescape %}
+							<div class="input-group">
+								<i class='bx bxs-user'></i>
+								<input type="text" placeholder="First Name" name="firstname" required />
+							</div>
+
+							<div class="input-group">
+								<i class='bx bxs-user'></i>
+								<input type="text" placeholder="Last Name" name="lastname" required />
+							</div>
+
+							<div class="input-group">
+								<i class='bx bxs-user'></i>
+								<input type="number" placeholder="Age" name="age" required />
+							</div>
+
+							<div class="input-group">
+								<i class='bx bx-mail-send'></i>
+								<input type="email" placeholder="Email" name="username" required />
+							</div>
+
+							<div class="input-group">
+								<i class='bx bxs-lock-alt'></i>
+								<input type="password" placeholder="Password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[`,!,@,#,$,%,^,&,*]).{8,}" title="Must contain at least one number, one special character,one uppercase,one lowercase letter, and at least 8 characters" required />
+							</div>
+
+							<button type="submit" name="register">
+								Sign up
+							</button>
+
+						</form>
+						<p>
+							<span>
+								Already have an account?
+							</span>
+							<b onclick="toggle()" class="pointer">
+								Sign in here
+							</b>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col align-items-center flex-col sign-in">
+				<div class="form-wrapper align-items-center">
+					<div class="flip-container">
+						<div class="flipper" id="flipper">
+							<div class="front">
+								<div class="form sign-in">
+									<form action="/login" method="POST">
+										{% autoescape off %}
+										<div class="msg">{{ msg }}</div>
+										{% endautoescape %}
+										<div class="input-group">
+											<i class='bx bx-mail-send'></i>
+											<input type="email" placeholder="Email" name="username" required />
+										</div>
+										<div class="input-group">
+											<i class='bx bxs-lock-alt'></i>
+											<input type="password" placeholder="Password" name="password" required />
+										</div>
+										<button type="submit" name="login">
+											Sign in
+										</button>
+
+									</form>
+
+									<p>
+										<span>
+											Don't have an account?
+										</span>
+										<b onclick="toggle()" class="pointer">
+											Sign up here
+										</b>
+									</p>
+									<a class="flipbutton" id="loginButton" href="#">Admin Login</a>
+								</div>
+							</div>
+							<div class="back">
+								<div class="form sign-in">
+									<form action="/adminlogin" method="POST">
+										{% autoescape off %}
+										<div class="msg">{{ msg }}</div>
+										{% endautoescape %}
+										<div class="input-group">
+											<i class='bx bx-mail-send'></i>
+											<input type="email" placeholder="Email" name="adminusername" required />
+										</div>
+										<div class="input-group">
+											<i class='bx bxs-lock-alt'></i>
+											<input type="password" placeholder="Password" name="adminpassword" required />
+										</div>
+										<button type="submit" name="login">
+											Sign in
+										</button><br><br>
+										<a class="flipbutton" id="registerButton" href="#">User Login</a>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row content-row">
+				<div class="col align-items-center flex-col">
+					<div class="text sign-in">
+						<h2>
+							Welcome
+						</h2>
+					</div>
+				</div>
+				<div class="col align-items-center flex-col">
+					<div class="text sign-up">
+						<h2>
+							Join with us
+						</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		let container = document.getElementById('container')
+
+		toggle = () => {
+			container.classList.toggle('sign-in')
+			container.classList.toggle('sign-up')
+		}
+
+		setTimeout(() => {
+			container.classList.add('sign-in')
+		}, 200)
+
+		var loginButton = document.getElementById("loginButton");
+		var registerButton = document.getElementById("registerButton");
+
+		loginButton.onclick = function () {
+			document.querySelector("#flipper").classList.toggle("flip");
+		}
+
+		registerButton.onclick = function () {
+			document.querySelector("#flipper").classList.toggle("flip");
+		}
+	</script>
+</html>
