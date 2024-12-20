@@ -1,10 +1,8 @@
 # Mental Illness and Happiness Prediction
 
-#### Technologies Used:\*\* Python, Flask, HTML5, CSS3, JavaScript, MySQL
+#### Technologies Used: Python, Flask, HTML5, CSS3, JavaScript, MySQL
 
 ### Project Overview
-
-<div style="text-align: justify;">
 
 - The Mental Illness and Happiness Prediction project aims to predict the severity levels of mental health conditions, such as depression, anxiety, and stress, using machine learning models. The project employs AdaBoost and Support Vector Machine (SVM) algorithms to provide accurate predictions, offering valuable insights into mental well-being. Additionally, the project uses linear regression to predict happiness level, helping to understand the relationship between mental health and overall happiness.
 
@@ -92,4 +90,4 @@ To run the Mental Illness and Happiness Prediction app, follow these steps:
     - For admin access, use the credentials provided in the admin table in the database.
     - For regular users, you can sign up through the website and use the credentials you create.
 
-That’s it! You can now start using the Mental Illness and Happiness Prediction app to predict mental health conditions and happiness levels based on user input.</div>
+That’s it! You can now start using the Mental Illness and Happiness Prediction app to predict mental health conditions and happiness levels based on user input.
