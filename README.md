@@ -38,7 +38,7 @@
 
 ### Conclusion
 
-This project combines machine learning and web development to offer a meaningful solution for tracking and predicting mental health conditions. By integrating a powerful machine learning model with a user-friendly web interface, it provides users with valuable insights into their mental well-being.
+- This project combines machine learning and web development to offer a meaningful solution for tracking and predicting mental health conditions. By integrating a powerful machine learning model with a user-friendly web interface, it provides users with valuable insights into their mental well-being.
 
 ## How to Run the App
 
