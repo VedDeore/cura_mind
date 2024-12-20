@@ -4,7 +4,7 @@
 
 ### Project Overview
 
-- The Mental Illness and Happiness Prediction project aims to predict the severity levels of mental health conditions, such as depression, anxiety, and stress, using machine learning models. The project employs AdaBoost and Support Vector Machine (SVM) algorithms to provide accurate predictions, offering valuable insights into mental well-being. Additionally, the project uses linear regression to predict happiness level, helping to understand the relationship between mental health and overall happiness.
+- The **Mental Illness and Happiness Prediction** project aims to predict the severity levels of mental health conditions, such as depression, anxiety, and stress, using machine learning models. The project employs **AdaBoost** and **Support Vector Machine (SVM)** algorithms to provide accurate predictions, offering valuable insights into mental well-being. Additionally, the project uses linear regression to predict happiness level, helping to understand the relationship between mental health and overall happiness.
 
 ### Key Features
 
@@ -69,8 +69,8 @@ To run the Mental Illness and Happiness Prediction app, follow these steps:
 
 2.  **Set Up MySQL Database:**
 
-    - Create a MySQL database for the app. In the database folder, you will find SQL queries to create the necessary tables. Run the following queries in your MySQL database.
-    - Create a .env file in the root directory of the project and set up the MySQL connection variables. An example is provided in the .env.example file.
+    - Create a MySQL database for the app. In the database folder, you will find SQL queries to create the necessary tables. Run the queries in your MySQL database.
+    - Create a .env file in the root directory of the project and set up the variables. An example is provided in the .env.example file.
 
 3.  **Run the Application:**
 
