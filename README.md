@@ -5,6 +5,7 @@
 ### Project Overview
 
 - The **Mental Illness and Happiness Prediction** project aims to predict the severity levels of mental health conditions, such as depression, anxiety, and stress, using machine learning models. The project employs **AdaBoost** and **Support Vector Machine (SVM)** algorithms to provide accurate predictions, offering valuable insights into mental well-being. Additionally, the project uses linear regression to predict happiness level, helping to understand the relationship between mental health and overall happiness.
+- Project Demo is available [here](https://drive.google.com/file/d/1SBtCfBzXo0h1PzaLPApbVTBKBAZ8SjGC/view?usp=sharing).
 
 ### Key Features
 
